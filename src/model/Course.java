@@ -6,9 +6,10 @@ public class Course {
     private String courseName;
     private int credits;
     //Parameterized Constructor
-    public Course(String courseId,String courseName){
+    public Course(String courseId,String courseName,int credits){
         this.courseId=courseId;
         this.courseName=courseName;
+        setCredits(credits);
     }
     // Create setter for credits
 
