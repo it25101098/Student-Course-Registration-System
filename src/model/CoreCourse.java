@@ -1,4 +1,4 @@
 package model;
 
-public class CoreCourse {
+public class CoreCourse extends Course {
 }
