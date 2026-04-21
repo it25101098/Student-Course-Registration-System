@@ -23,6 +23,6 @@ public class ElectiveCourse extends Course {
     @Override
     public void displayCourse() {
         super.displayCourse();
-        this.specialization=specialization;
+        System.out.println("Specialization: "+specialization);
     }
 }
