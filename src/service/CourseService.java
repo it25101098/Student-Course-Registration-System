@@ -57,7 +57,26 @@ public class CourseService {
              System.out.println("--------------------");
          }
     }
-    
+    //           3.UPDATE COURSE
+    public  void updateCourse(){
+        System.out.println("Enter Course ID to update: ");
+        String id = scanner.nextLine();
+
+        for(Course c : courseList){
+            if(c.getCourseId().equals(id)){
+                System.out.println("Enter new Credits: ");
+                int newCredits = scanner.nextInt();
+                scanner.nextLine();
+                c.setCredits(newCredits);
+                saveToFile();
+                System.out.println("Course Update!");
+                return;
+            }
+
+        }
+        System.out.println("Course not found.");
+    }
+
 
 
 
