@@ -113,6 +113,25 @@ public class CourseService {
             System.out.println("Error saving file: " + e.getMessage());
         }
     }
+    // Load from File
+
+    public void loadFromFile() {
+        try (BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(",");
+                if (parts[0].equals("CORE")) {
+                    courseList.add(new CoreCourse(parts[4], parts[1], parts[2],
+                            Integer.parseInt(parts[3])));
+                } else if (parts[0].equals("ELECTIVE")) {
+                    courseList.add(new ElectiveCourse(parts[1], parts[2],
+                            Integer.parseInt(parts[3]), parts[4]));
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("No existing data found. Starting fresh.");
+        }
+    }
 
 
 
