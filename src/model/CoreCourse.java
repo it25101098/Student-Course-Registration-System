@@ -9,7 +9,17 @@ public class CoreCourse extends Course {
         this.department=department;
 
     }
+    //Create the Getter and Setter
 
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    // Display
     @Override
     public void displayCourse() {
         super.displayCourse();
