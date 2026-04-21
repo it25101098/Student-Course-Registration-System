@@ -9,6 +9,14 @@ public class ElectiveCourse extends Course {
         super(courseId, courseName, credits);
         this.specialization=specialization;
     }
+    // Create the Getter and Setter
 
 
+    public String getSpecialization() {
+        return specialization;
+    }
+
+    public void setSpecialization(String specialization) {
+        this.specialization = specialization;
+    }
 }
