@@ -12,4 +12,40 @@ public class CourseService {
     private static final String FILE_NAME ="courses.txt";
     Scanner scanner = new Scanner(System.in);
 
+
+    //        1. ADD COURSE
+     public void addCourse(){
+         System.out.println("Select Course Type: ");
+         System.out.println("1. Core Course");
+         System.out.println("2. Elective Course");
+
+         int choice = scanner.nextInt();
+         scanner.nextLine();
+
+         System.out.println("Enter Course ID: ");
+         String id = scanner.nextLine();
+         System.out.println("Enter Course Name:  ");
+         String name = scanner.nextLine();
+         System.out.println("Enter Credits: ");
+         int credits = scanner.nextInt();
+         scanner.nextLine();
+
+         if(choice ==1){
+             System.out.println("Enter Department: ");
+             String dept = scanner.nextLine();
+             CoreCourse c= new CoreCourse(dept,id,name,credits);
+             courseList.add(c);
+         } else if (choice==2) {
+             System.out.println("Enter Specialization: ");
+             String spec = scanner.nextLine();
+             ElectiveCourse e = new ElectiveCourse(id,name,credits,spec);
+             courseList.add(e);
+         }
+         saveToFile();
+         System.out.println("Course Added Sucessfully");
+
+     }
+
+    
+
 }
