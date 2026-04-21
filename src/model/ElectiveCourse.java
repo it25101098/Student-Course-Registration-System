@@ -19,4 +19,10 @@ public class ElectiveCourse extends Course {
     public void setSpecialization(String specialization) {
         this.specialization = specialization;
     }
+    // Override display method
+    @Override
+    public void displayCourse() {
+        super.displayCourse();
+        this.specialization=specialization;
+    }
 }
