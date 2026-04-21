@@ -9,8 +9,10 @@ public class CoreCourse extends Course {
         this.department=department;
 
     }
-    
 
-
-
+    @Override
+    public void displayCourse() {
+        super.displayCourse();
+        System.out.println("Department : "+department);
+    }
 }
