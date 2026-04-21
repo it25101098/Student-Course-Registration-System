@@ -4,6 +4,7 @@ import model.Course;
 import model.ElectiveCourse;
 
 import java.io.*;
+import java.security.spec.RSAOtherPrimeInfo;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -58,12 +59,12 @@ public class CourseService {
          }
     }
     //           3.UPDATE COURSE
-    public  void updateCourse(){
+    public  void updateCourse() {
         System.out.println("Enter Course ID to update: ");
         String id = scanner.nextLine();
 
-        for(Course c : courseList){
-            if(c.getCourseId().equals(id)){
+        for (Course c : courseList) {
+            if (c.getCourseId().equals(id)) {
                 System.out.println("Enter new Credits: ");
                 int newCredits = scanner.nextInt();
                 scanner.nextLine();
@@ -73,6 +74,19 @@ public class CourseService {
                 return;
             }
 
+        }
+        System.out.println("Course not found.");
+    }
+    //        4.Delete Course
+    public void deleteCourse(){
+        System.out.println("Enter the Course ID to delete: ");
+        String id = scanner.nextLine();
+
+        for(Course c: courseList){
+            courseList.remove(c);
+            saveToFile();
+            System.out.println("Course Deletes!");
+            return;
         }
         System.out.println("Course not found.");
     }
