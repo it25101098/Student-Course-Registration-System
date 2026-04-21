@@ -5,9 +5,11 @@ public class CoreCourse extends Course {
     private String department; // instance variables
     //Parameterized Constructor
     CoreCourse(String department, String courseId , String courseName, int credits ){
-        super(courseId, courseName ,credits);
+        super(courseId, courseName, credits);
         this.department=department;
+
     }
+    
 
 
 
