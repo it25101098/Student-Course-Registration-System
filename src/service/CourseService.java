@@ -90,6 +90,29 @@ public class CourseService {
         }
         System.out.println("Course not found.");
     }
+    //          Save To file
+    private  void saveToFile() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME))) {
+            for (Course c : courseList) {
+                if (c instanceof CoreCourse) {
+                    CoreCourse cc = (CoreCourse) c;
+                    writer.write("CORE," + cc.getCourseId() + "," +
+                            cc.getCourseName() + "," +
+                            cc.getCredits() + "," +
+                            cc.getDepartment());
+                } else if (c instanceof ElectiveCourse) {
+                    ElectiveCourse ec = (ElectiveCourse) c;
+                    writer.write("ELECTIVE," + ec.getCourseId() + "," +
+                            ec.getCourseName() + "," +
+                            ec.getCredits() + "," +
+                            ec.getSpecialization());
+                }
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            System.out.println("Error saving file: " + e.getMessage());
+        }
+    }
 
 
 
