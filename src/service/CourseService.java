@@ -45,7 +45,20 @@ public class CourseService {
          System.out.println("Course Added Sucessfully");
 
      }
-
+     //        2.VIEW ALL COURSE
+    public void viewCourses(){
+         if(courseList.isEmpty()){
+             System.out.println("No Courses Found.");
+             return;
+         }
+        System.out.println("\n=====All Courses =====");
+         for(Course c : courseList){
+             c.displayCourse();
+             System.out.println("--------------------");
+         }
+    }
     
+
+
 
 }
